@@ -28,14 +28,17 @@ public abstract class Empleados extends Persona {
 ////////////////////////////////////////////////////////////////////////////////
     //Constructor
 
-    public Empleados(String empresa, double sueldoExtra, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero) {
-        super(nombre, cedula, edad, genero);
+    public Empleados(String empresa, double sueldoExtra, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero, int codigo) {
+        super(nombre, cedula, edad, genero, codigo);
         this.empresa = empresa;
         this.sueldoExtra = sueldoExtra;
         this.fechaContratacion = fechaContratacion;
         this.vacaciones = vacaciones;
     }
 
+
+
+    
 ////////////////////////////////////////////////////////////////////////////////
     //Get and Set   
     public String getEmpresa() {

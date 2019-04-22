@@ -27,13 +27,15 @@ public class Persona implements Comparable<Persona> {
 ////////////////////////////////////////////////////////////////////////////////
     //Constructor
 
-    public Persona(String nombre, String cedula, int edad, String genero) {
+    public Persona(String nombre, String cedula, int edad, String genero, int codigo) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.edad = edad;
         this.genero = genero;
         this.codigo = codigo;
     }
+
+    
 
     public String getNombre() {
         return nombre;
@@ -101,7 +103,7 @@ public class Persona implements Comparable<Persona> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + this.codigo;
+        hash = 59 * hash + this.codigo;
         return hash;
     }
 

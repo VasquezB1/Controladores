@@ -17,20 +17,23 @@ public class ControladorEmpleadoAsalariado {
     
    
      private List<EmpleadoAsalariado> lista;
+     private int codigo;
 
-    public ControladorEmpleadoAsalariado() {
+    public ControladorEmpleadoAsalariado() {        
         lista = new ArrayList<>();
+        codigo=1;
     }
 
     public void create(EmpleadoAsalariado objeto) {
-        
+        objeto.setCodigo(codigo);
+        codigo++;
         lista.add(objeto);
         
     }
 
-    public EmpleadoAsalariado read(String nombre) {
+    public EmpleadoAsalariado read(int codigo) {
         for (EmpleadoAsalariado empleadoasalariado : lista) {
-            if (empleadoasalariado.getNombre().equals(nombre)) {
+            if (empleadoasalariado.getCodigo()== codigo) {
                 return empleadoasalariado;
             }
         }
@@ -40,17 +43,17 @@ public class ControladorEmpleadoAsalariado {
     public void update(EmpleadoAsalariado objeto) {
         for (int i = 0; i < lista.size(); i++) {
             EmpleadoAsalariado elemento = lista.get(i);
-            if (elemento.getNombre().equals(objeto.getNombre())) {
+            if (elemento.getCodigo()== objeto.getCodigo()) {
                 lista.set(i, objeto);
                 break;
             }
         }
     }
 
-    public void delete(String nombre) {
+    public void delete(int codigo) {
         for (int i = 0; i < lista.size(); i++) {
             EmpleadoAsalariado dato = lista.get(i);
-            if (dato.getNombre().equals(nombre)) {
+            if (dato.getNombre().equals(codigo)) {
                 lista.remove(i);
                 break;
             }

@@ -36,26 +36,26 @@ public class Prueba {
                
         ProfesorContratado carlos=new ProfesorContratado();
         carlos.setCodigo(20);
-        carlos.setNombre("Sony");
+        carlos.setNombre("Carlos");
         
         ProfesorContratado juan =new ProfesorContratado();
         juan.setCodigo(20);
-        juan.setNombre("TCL");
+        juan.setNombre("Juan");
         
         
-        
+        System.out.println("\tMétdo para comparar si son iguales por nombre");
         if(carlos.equals(juan)){
             System.out.println("Son iguales :)");
             
         }else{
             System.out.println("No son iguales :(");
         }
-        
+////////////////////////////////////////////////////////////////////////////////// 
         ProfesorSustituto salon=new ProfesorSustituto();
         salon.setCodigo(20);
         ProfesorSustituto los= new ProfesorSustituto();
         los.setCodigo(10);
-        
+        System.out.println("\tMetodo para comparar por su codigo");
         if(salon.equals(los)){
             System.out.println("Son iguales :)");
         }
@@ -68,14 +68,15 @@ public class Prueba {
         Set<ProfesorContratado> lista = new HashSet<>();
         lista.add(carlos);
         lista.add(juan);
+        System.out.println("Método para ver si se encuentra en la lista");
         for (ProfesorContratado profesorContratado : lista) {
             System.out.println("Profesor Contratado " + profesorContratado.getNombre());
             
         }
         if(lista.contains(juan)){
-            System.out.println("En la lista si existe");
+            System.out.println("\tEn la lista si existe");
         }else        {
-            System.out.println("No existe en la lista");
+            System.out.println("\tNo existe en la lista");
         }
         
       
@@ -88,7 +89,20 @@ public class Prueba {
             System.out.println(profesorContratado.getNombre());
         }
             
-        
+        // Prueba de TreeSet
+        Taxista Alberto = new Taxista();
+        Alberto.setCodigo(20);
+        Taxista Auron = new Taxista();
+        Auron.setCodigo(100);
+       HashSet<Taxista> listaHashSet = new HashSet<>();
+       listaHashSet.add(Auron);
+       listaHashSet.add(Alberto);
+        System.out.println("\t-----Lista Con HashSet-----");
+        for (Taxista taxista : listaHashSet) {
+            System.out.println(taxista.getCodigo());
+            
+        }
+       
         
         
         // TODO code application logic here

@@ -21,7 +21,7 @@ public final class EmpleadoAsalariado extends Empleados implements Interface {
     ///////////////////Declaracion de Variables
 
     private int horasTrabajo;
-    private int codigo;
+   
     private double salario;
     private String telefono;
 ///////////////////////////////////
@@ -34,27 +34,28 @@ public final class EmpleadoAsalariado extends Empleados implements Interface {
 
 ////////////////////////////////////////////////////////////////////////////////
     //Constructor
-    
-    public EmpleadoAsalariado(String empresa, double sueldoExtra, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero) {
-        super(empresa, sueldoExtra, fechaContratacion, vacaciones, nombre, cedula, edad, genero);
+
+    public EmpleadoAsalariado(int horasTrabajo, double salario, String telefono, String empresa, double sueldoExtra, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero, int codigo) {
+        super(empresa, sueldoExtra, fechaContratacion, vacaciones, nombre, cedula, edad, genero, codigo);
+        this.horasTrabajo = horasTrabajo;
+        this.salario = salario;
+        this.telefono = telefono;
     }
 
-    public EmpleadoAsalariado(int horasTrabajo, int codigo, double salario, String empresa, double sueldoExtra, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero) {
-        super(empresa, sueldoExtra, fechaContratacion, vacaciones, nombre, cedula, edad, genero);
-        this.horasTrabajo = horasTrabajo;
-        this.codigo = codigo;
-        this.salario = salario;
-    }
+   
+
+
+    
+
+    
+    
 
     public EmpleadoAsalariado(int horasTrabajo, int codigo, double salario) {
         this.horasTrabajo = horasTrabajo;
-        this.codigo = codigo;
+     
         this.salario = salario;
 
     }
-
-////////////////////////////////////////////////////////////////////////////////
-    //Get and Set       
     public int getHorasTrabajo() {
         return horasTrabajo;
     }
@@ -63,20 +64,22 @@ public final class EmpleadoAsalariado extends Empleados implements Interface {
         this.horasTrabajo = horasTrabajo;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public double getSalario() {
         return salario;
     }
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+    //Get and Set
+    public void setTelefono(String telefono) {  
+        this.telefono = telefono;
     }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -113,7 +116,8 @@ public final class EmpleadoAsalariado extends Empleados implements Interface {
 
     @Override
     public String toString() {
-        return super.toString() + "\nEmpleadoAsalariado:\n{" + "horasTrabajo=" + horasTrabajo + ", codigo=" + codigo + ", salario=" + salario + '}';
-    }    
-    
+        return super.toString()+"\nEmpleadoAsalariado:\n{" + "horasTrabajo=" + horasTrabajo + ", salario=" + salario + ", telefono=" + telefono + '}';
+    }
+
+   
 }
